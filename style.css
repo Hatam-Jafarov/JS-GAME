@@ -1,0 +1,254 @@
+@charset "utf-8";
+
+html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	direction: ltr;
+	overflow-x: hidden;
+}
+
+body {
+	position: relative;
+	width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	font-family: consolas;
+	color: #000;
+	font-weight: normal;
+	line-height: 1.5;
+	font-variant: normal;
+	text-align: center;
+	text-decoration: none;
+	font-style: normal;
+	background: url('img/58675.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#game-area{
+	display: block;
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 700px;
+	height: 500px;
+	background-color: #000;
+	border: 5px solid #FF00A2;
+	overflow: hidden;
+}
+
+.rain {
+	position: absolute;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	animation-duration: 7s;
+	animation-name: example;
+	animation-fill-mode: forwards;
+	cursor: pointer;
+}
+.rain:hover{
+	box-shadow: 0px 0px 5px 5px yellow;
+}
+
+@keyframes example{
+	from {top: 0;}
+	to {top: calc(100% + 30px);}
+	100% {display: none;}
+}
+
+#score{
+	position: absolute;
+	left: calc(50% - 520px);
+	top: 50px;
+	padding: 10px;
+	background-color: #000;
+	border: 5px solid #FF00A2;
+	color: #fff;
+	font-family: 'Raleway';
+	font-size: 16px;
+}
+#countdown{
+	position: absolute;
+	left: calc(50% - 520px);
+	top: 93px;
+	padding: 10px;
+	background-color: #000;
+	border: 5px solid #FF00A2;
+	color: #fff;
+	font-family: 'Raleway';
+	font-size: 16px;
+}
+
+.endgame{
+	position: absolute;
+	top: calc(50% - 80px);
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 99;
+	padding: 10px;
+	background-color: #000;
+	border: 5px solid #FF00A2;
+	color: #fff;
+	font-family: 'Raleway';
+	font-size: 24px;
+	user-select: none;
+}
+.newgame{
+	position: absolute;
+	top: calc(50% - 5px);
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 99;
+	padding: 10px;
+	background-color: #000;
+	border: 5px solid #FF00A2;
+	color: #fff;
+	font-family: 'Raleway';
+	font-size: 24px;
+	cursor: pointer;
+	user-select: none;
+}
+.newgame:hover{
+	background-color: #FF00A2;
+	transition: all 0.5s;
+}
+
+.startgame{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%)translateY(-50%);
+	z-index: 99;
+	padding: 10px 20px;
+	background-color: #000;
+	border: 5px solid #FF00A2;
+	color: #fff;
+	font-family: 'Raleway';
+	font-size: 24px;
+	cursor: pointer;
+	user-select: none;
+}
+.startgame:hover{
+	background-color: #FF00A2;
+	transition: all 0.5s;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1100px){
+	#score{
+		left: calc(50% - 384px);
+    	padding: 5px;
+    	font-size: 14px;
+	}
+	#countdown{
+		left: calc(50% - 384px);
+    	padding: 5px;
+    	font-size: 14px;
+	}
+	#game-area{
+		transform: translateX(-40%);
+	    width: 600px;
+	    height: 450px;
+	}
+	.rain{
+		width: 30px;
+		height: 30px;
+		background-size: cover;
+	}
+	.newgame{
+		font-size: 18px;
+	}
+	.endgame{
+		font-size: 18px;
+	}
+}
+
+
+@media only screen and (min-width: 566px) and (max-width: 767px){
+	.startgame{
+		font-size: 17px;
+	}
+	.endgame{
+		font-size: 15px;
+	}
+	.newgame{
+		font-size: 15px;
+	}
+	#game-area{
+		top: 20px;
+		transform: translateX(-25%);
+		width: 350px;
+    	height: 440px;;
+	}
+	#countdown{
+		left: calc(50% - 214px);
+		top: 56px;
+    	padding: 5px;
+    	font-size: 14px;
+	}
+	#score{
+		left: calc(50% - 214px);
+		top: 20px;
+    	padding: 5px;
+    	font-size: 14px;
+	}
+	.rain{
+		width: 30px;
+		height: 30px;
+		background-size: cover;
+	}
+}
+
+
+@media only screen and (max-width: 565px){
+	.startgame{
+		font-size: 17px;
+	}
+	.rain{
+		width: 25px;
+		height: 25px;
+		background-size: contain;
+	}
+	.endgame{
+		font-size: 15px;
+	}
+	.newgame{
+		font-size: 15px;
+		top: 50%;
+	}
+	#game-area{
+		top: 50px;
+		transform: translateX(-50%);
+		width: 300px;
+    	height: 400px;;
+	}
+	#countdown{
+		border-left: none;
+		left: calc(50% - 60px);
+    	top: 14px;
+    	padding: 5px;
+    	font-size: 14px;
+    	text-align: right;
+    	width: 200px;
+	}
+	#score{
+		border-right: none;
+		left: calc(50% - 155px);
+    	top: 14px;
+    	padding: 5px;
+    	font-size: 14px;
+    	text-align: left;
+    	width: 100px;
+	}	
+}
